@@ -1,0 +1,34 @@
+package com.company;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+	            //Varialbes//
+        Scanner cthulu = new Scanner(System.in);
+        int charPos = 0;
+        String input1, input2, cmnPF = "";
+        char char1 = 0, char2 = 0;
+
+                //User Input//
+        System.out.print("Input a string: ");
+        input1 = cthulu.nextLine();
+        System.out.print("Input another string: ");
+        input2 = cthulu.nextLine();
+
+                //Matching strings/characters//
+
+        while (char1 == char2){
+            cmnPF = cmnPF + char2;
+
+            char1 = input1.charAt(charPos);
+            char2 = input2.charAt(charPos);
+
+            charPos++;
+        }
+
+            System.out.println("the common prefix is " + cmnPF);
+
+
+    }
+}
