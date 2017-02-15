@@ -1,0 +1,51 @@
+package com.company;
+import java.util.Scanner;
+
+public class Main {
+
+
+    public static void main(String[] args) {
+	            //Variables//
+        Scanner cthulu = new Scanner(System.in);
+        String input;
+        int d1, d2, d3, d4, d5, d6 ,d7 ,d8, d9 ,d10, d11, d12, result;
+
+                //Input//
+        System.out.print("Enter the first 12 digits of an ISBN-13: ");
+        input = cthulu.nextLine();
+
+        while (input.length()!= 12){
+            System.out.print("Please enter the first 12 digits of an ISBN-13: ");
+            input = cthulu.nextLine();
+        }
+
+                //Assigning digits/variables//
+        d1 = (int)input.charAt(0) - 48;  //<-- We subtract 48 from every value because that's
+        d2 = (int)input.charAt(1) - 48;  // where the character '0' starts.
+        d3 = (int)input.charAt(2) - 48;
+        d4 = (int)input.charAt(3) - 48;
+        d5 = (int)input.charAt(4) - 48;
+        d6 = (int)input.charAt(5) - 48;
+        d7 = (int)input.charAt(6) - 48;
+        d8 = (int)input.charAt(7) - 48;
+        d9 = (int)input.charAt(8) - 48;
+        d10 = (int)input.charAt(9) - 48;
+        d11 = (int)input.charAt(10) - 48;
+        d12 = (int)input.charAt(11) - 48;
+
+                //Formula Magic//
+
+        result = 10 - (d1 + (3*d2) + d3 + (3*d4) + d5 + (3*d6) + d7 + (3*d8) + d9 + (3*d10) + d11 + (3*d12)) % 10;
+
+        if (result == 10){
+            result = 0;
+        }
+
+                //Results//
+        System.out.println("The ISBN-13 number is: " + input + result);
+
+
+    }
+
+
+}
